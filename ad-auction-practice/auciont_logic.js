@@ -12,7 +12,7 @@ const bids = [
 
 const breakDuration = 120;
 
-function maxRevenue() {
+export function maxRevenue() {
     // Greedy sort by price-per-second
     bids.sort((a, b) => (b.price / b.duration) - (a.price / a.duration));
 
@@ -26,7 +26,7 @@ function maxRevenue() {
         }
     }
 
-    return selected;
+    return {ads: selected, totalDuration: time};
 }
 
-console.log(maxRevenue())
+// console.log(maxRevenue(bids, breakDuration))
